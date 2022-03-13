@@ -1,17 +1,37 @@
-#include <iostream>
+# include <iostream>
+# include <string>
+
+class PhoneBook {
+public:
+	PhoneBook();
+	virtual ~PhoneBook();
+
+	void	init(void);
+	void	add(void);
+	void	search(void);
+	void	display(void);
+private:
+	Contact	contacts[8];
+	int		amount;
+};
+
+class Contact {
+public:
+
+private:
+
+};
+
+PhoneBook::PhoneBook()
+{
+	this->amount = 0;
+}
 
 int main()
 {
-	std::cout << "Please enter two names\n"; 
-	std::string first;
-	std::string second;
+	PhoneBook	pb;
+	bool		run;
+	std::string	command;
 
-	std::cin >> first >> second; // read two strings
-	if (first == second) 
-		std::cout << "that's the same name twice\n"; 
-	if (first < second)
-		std::cout << first << " is alphabetically before " << second <<'\n'; 
-	if (first > second)
-		std::cout << first << " is alphabetically after " << second <<'\n';
-	return (0);
+	
 }
