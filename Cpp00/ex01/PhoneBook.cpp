@@ -1,37 +1,42 @@
-# include <iostream>
-# include <string>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/21 20:51:22 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/21 21:10:28 by lucisanc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-class PhoneBook {
-public:
-	PhoneBook();
-	virtual ~PhoneBook();
+# include "PhoneBook.hpp"
 
-	void	init(void);
-	void	add(void);
-	void	search(void);
-	void	display(void);
-private:
-	Contact	contacts[8];
-	int		amount;
-};
+void	PhoneBook::add( void ) {
 
-class Contact {
-public:
-
-private:
-
-};
-
-PhoneBook::PhoneBook()
-{
-	this->amount = 0;
+	Contact newcontact;
+	
+	newcontact.add_contact();
+	if (amount == 8) {
+		if (index == 8)
+			index = 0;
+		contacts[index++] = newcontact;
+	} else {
+		contacts[amount++] = newcontact;
+		index++;
+	}
+	std::cout << GREEN << "Contact added!\n" << NORMAL;
+	return;
 }
 
-int main()
-{
-	PhoneBook	pb;
-	bool		run;
-	std::string	command;
+PhoneBook::PhoneBook() {
 
-	
+	std::cout << "Phonebook created!\n" << std::endl;
+	this->amount = 0;
+	this->index = 0;
+}
+
+PhoneBook::~PhoneBook() {
+
+	std::cout << "Phonebook destroyed\n" << std::endl;
 }
