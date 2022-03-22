@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClassPhonebook.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/25 13:25:34 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/25 16:58:38 by psprawka         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:36:24 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ClassPhonebook::search(void)
 	
 	std::cout << "| " << std::setw(10) << "INDEX" << " | " << std::setw(10) << "FIRST NAME"
 		<< " | " << std::setw(10) << "LAST NAME" << " | " << std::setw(10) << "NICKNAME" << " |"<< std::endl;
-	std::cout << "------------------------------------------------------\n"; 	
+	std::cout << "------------------------------------------------------\n";
 	
 	for (int i = 0; i < contacts_nb; i++)
 	{

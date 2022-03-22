@@ -1,4 +1,4 @@
-NAME		= phonebook
+NAME		= zombie
 
 CC			= clang++
 
@@ -6,8 +6,9 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 
 SRC			= \
 main.cpp\
-PhoneBook.cpp\
-Contact.cpp
+Zombie.cpp\
+# newZombie.cpp\
+# randomChump.cpp
 
 OBJ			= ${SRC:.cpp=.o}
 

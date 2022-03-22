@@ -6,11 +6,15 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 20:51:15 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/21 21:05:54 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/22 17:28:10 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+
 # include <iostream>
+# include <iomanip>
 # include <string>
 
 # define NORMAL			"\x1B[0m"
@@ -31,8 +35,8 @@ class Contact {
 public:
 
 	void 	add_contact(void);
-	void 	display_contact(void);
-	// void 	display_contact_details(void);
+	void 	display_contact(int id) const;
+	void 	display_details(void) const;
 
 private:
 
@@ -48,8 +52,7 @@ class PhoneBook {
 public:
 
 	void	add(void);
-	// void	search(void);
-	// void	display(void);
+	void	search(void);
 
 	PhoneBook();
 	virtual ~PhoneBook();
@@ -59,3 +62,5 @@ private:
 	int		amount;
 	int		index;
 };
+
+#endif
