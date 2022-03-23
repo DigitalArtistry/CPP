@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 15:58:09 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/23 11:52:57 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/23 11:48:33 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/23 18:28:35 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include <iostream>
-# include <string>
+int		main(void) {
 
-# define GREEN			"\x1B[32m"
-# define YELLOW			"\x1B[33m"
-# define NORMAL			"\x1B[0m"
-# define RED			"\x1B[31m"
+	Zombie *zHoard = zombieHorde(10, "Rawwrrrr");
 
-class Zombie {
-
-private:
-	std::string	_name;
-
-public:
-	Zombie(std::string name);
-	virtual	~Zombie(void);
-
-	void	announce(void);
-};
-
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-
-#endif
+	delete [] zHoard;
+	return 0;
+}

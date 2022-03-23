@@ -1,4 +1,4 @@
-NAME		= zombie
+NAME		= zombieHorde
 
 CC			= clang++
 
@@ -7,8 +7,7 @@ FLAGS		= -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 SRC			= \
 main.cpp\
 Zombie.cpp\
-newZombie.cpp\
-randomChump.cpp
+zombieHorde.cpp
 
 OBJ			= ${SRC:.cpp=.o}
 

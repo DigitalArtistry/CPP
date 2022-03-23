@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/22 15:58:09 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/23 11:52:57 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/23 18:28:20 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
-# include <string>
-
-# define GREEN			"\x1B[32m"
-# define YELLOW			"\x1B[33m"
-# define NORMAL			"\x1B[0m"
-# define RED			"\x1B[31m"
+# include <string.h>
 
 class Zombie {
 
@@ -27,13 +22,13 @@ private:
 	std::string	_name;
 
 public:
-	Zombie(std::string name);
+	Zombie(void);
 	virtual	~Zombie(void);
 
+	void	nameZombie(std::string name);
 	void	announce(void);
 };
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
