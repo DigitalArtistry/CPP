@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:55:12 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/23 18:27:42 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:14:33 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Zombie::Zombie(void) {
 
-	std::cout << "Constructor" << std::endl;
+	// std::cout << "Constructor" << std::endl;
 }
 
 Zombie::~Zombie(void) {
 
-	std::cout << "Destructor" << std::endl;
+	// std::cout << "Destructor" << std::endl;
 }
 
 void	Zombie::nameZombie(std::string name) {

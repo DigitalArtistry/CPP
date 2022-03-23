@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 11:51:43 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/23 18:29:55 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:13:56 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie	*zombieHorde(int N, std::string name) {
 
 	for (int i = 0; i < N ; ++i) {
 		zombieHorde[i].nameZombie(name);
-		// zombieHorde[i].announce();
+		zombieHorde[i].announce();
 	}
 	return zombieHorde;
 }
