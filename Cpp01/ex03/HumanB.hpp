@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/24 09:56:11 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/24 15:10:11 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/24 15:16:17 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 # include <iostream>
-# include <string.h>
+# include <string>
+# include "Weapon.hpp"
 
-class Zombie {
+class HumanB {
 
 private:
 	std::string	_name;
+	Weapon		 *_weapon;
 
 public:
-	Zombie(void);
-	virtual	~Zombie(void);
+	void	attack(void);
+	void	setWeapon(Weapon &weapon);
 
-	void	nameZombie(std::string name);
-	void	announce(void);
+	HumanB(std::string name);
+	~HumanB();
+
 };
-
-Zombie	*zombieHorde(int N, std::string name);
 
 #endif

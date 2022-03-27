@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/24 09:56:11 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/24 10:19:14 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/24 15:19:47 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-# include <iostream>
-# include <string.h>
+int		main() {
+{
+	Weapon club = Weapon("spiked club");
 
-class Zombie {
+	HumanA fritz("Fritz", club);
+	fritz.attack();
+	club.setType("crossbow");
+	fritz.attack();
+}
+{
+	Weapon club = Weapon("spiked club");
 
-private:
-	std::string	_name;
-
-public:
-	Zombie(void);
-	virtual	~Zombie(void);
-
-	void	nameZombie(std::string name);
-	void	announce(void);
-};
-
-Zombie	*zombieHorde(int N, std::string name);
-
-#endif
+	HumanB covaks("Covaks");
+	covaks.setWeapon(club);
+	covaks.attack();
+	club.setType("nunchuks");
+	covaks.attack();
+}
+	return 0;
+}

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/24 09:56:11 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/27 12:21:15 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
-# include <string.h>
+# include <string>
 
-class Zombie {
+class Fixed {
 
 private:
-	std::string	_name;
+	int					_nb;
+	static int const	_fract = 8;
 
 public:
-	Zombie(void);
-	virtual	~Zombie(void);
+	Fixed & operator=(Fixed const & x);
+	Fixed	operator+(Fixed const & x) const;
 
-	void	nameZombie(std::string name);
-	void	announce(void);
+	void	setNb(int nb);
+	int		getNb() const;
+	Fixed(void);
+	~Fixed();
 };
-
-Zombie	*zombieHorde(int N, std::string name);
 
 #endif

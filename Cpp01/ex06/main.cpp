@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/24 09:56:11 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/26 16:12:50 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/26 18:52:13 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include "Karen.hpp"
 
-# include <iostream>
-# include <string.h>
+int		main(int ac, char **av) {
 
-class Zombie {
+	Karen	girl;
 
-private:
-	std::string	_name;
+	if (ac != 2) {
+		std::cout << "Please add a second argument specifying the level of complaint" << std::endl;
+		return 0;
+	}
 
-public:
-	Zombie(void);
-	virtual	~Zombie(void);
-
-	void	nameZombie(std::string name);
-	void	announce(void);
-};
-
-Zombie	*zombieHorde(int N, std::string name);
-
-#endif
+	girl.filter(av[1]);
+	return 0;
+}

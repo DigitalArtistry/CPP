@@ -5,40 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 18:47:03 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/25 15:03:41 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/26 16:12:50 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/26 18:22:03 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sed_for_losers.hpp"
+#include "Karen.hpp"
 
 int		main(int ac, char **av) {
 
-	std::ifstream	ifs(av[1]);
-	std::ofstream	ofs("test2");
-	std::string		line, T;
+	(void)ac;
+	Karen	girl;
 
-	if (ac < 4)
-		return 0;
-	if (!ifs)
-		std::cout << "Didn't work";
-	else {
+	std::cout << "debug: ";
+	girl.complain("debug");
+	std::cout << std::endl;
 
-		while (1 && std::getline(ifs, line)) {
-			
-			std::stringstream sso(line);
-			while (std::getline(sso, T, ' ')) {
-				std::cout << "dbug: " << T << std::endl;
-				if (T == av[2]) {
-					T = av[3];
-				}
-				ofs << T << ' ';
-			}
-			if (ifs.eof())
-				break;
-			ofs << "\n";
-		}
-	}
-	ifs.close();
+	std::cout << "info: ";
+	girl.complain("info");
+	std::cout << std::endl;
+
+	std::cout << "warning: ";
+	girl.complain("warning");
+	std::cout << std::endl;
+
+	std::cout << "error: ";
+	girl.complain("error");
+	std::cout << std::endl;
+	
 	return 0;
 }

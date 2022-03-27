@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/23 11:51:54 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/24 09:56:11 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/24 15:08:18 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/03/24 15:11:51 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+# include "HumanA.hpp"
+# include "Weapon.hpp"
 
-# include <iostream>
-# include <string.h>
+void	HumanA::attack(void) {
 
-class Zombie {
+	std::cout << this->_name << ": attacks with " << this->_weapon->getType() << std::endl;
+}
 
-private:
-	std::string	_name;
+HumanA::HumanA(std::string name, Weapon &weapon) {
 
-public:
-	Zombie(void);
-	virtual	~Zombie(void);
+	this->_name = name;
+	this->_weapon = &weapon;
+}
 
-	void	nameZombie(std::string name);
-	void	announce(void);
-};
-
-Zombie	*zombieHorde(int N, std::string name);
-
-#endif
+HumanA::~HumanA(void) {}
