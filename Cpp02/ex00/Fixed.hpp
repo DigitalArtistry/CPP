@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/27 18:40:17 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/28 15:36:40 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ private:
 	static int const	_fract = 8;
 
 public:
-	Fixed & operator=(Fixed const & x);  // copy assignment operator overload
-	Fixed(Fixed const & x);  // copy constructor
+	Fixed(void);
+	Fixed(Fixed const & src);  // copy constructor
+	~Fixed();
+
+	Fixed &operator=(Fixed const & oload);  // copy assignment operator overload
 
 	void	setRawBits(int const raw);
 	int		getRawBits(void) const;
-	Fixed(void);
-	~Fixed();
 };
 
 #endif
