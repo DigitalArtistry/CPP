@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/28 15:36:40 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:28:00 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ private:
 	static int const	_fract = 8;
 
 public:
-	Fixed(void);
+	Fixed(void);  // default constructor
 	Fixed(Fixed const & src);  // copy constructor
-	~Fixed();
+	~Fixed(void);  // destructor
 
 	Fixed &operator=(Fixed const & oload);  // copy assignment operator overload
 

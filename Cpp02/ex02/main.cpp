@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:07:53 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/29 14:26:48 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/29 16:12:27 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,18 @@
 
 int		main(void) {
 
-	Fixed a;
-	Fixed const b( 10 );
-	std::cout << b.getRawBits() << std::endl;
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-
-	a = Fixed( 1234.4321f );
+	Fixed			a;
+	Fixed const		b( Fixed( 5.05f ) * Fixed( 2 ) );
 	
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+
 	return 0;
 }
