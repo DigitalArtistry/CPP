@@ -14,9 +14,9 @@ SRCS		= $(shell find $(SRCS_DIR) -type f -name "*.cpp")
 OBJS_DIR	= ./objects/
 OBJS		= $(SRCS:$(SRCS_DIR)%.cpp=$(OBJS_DIR)%.o)
 
-CLEAN		= @echo "Executable removed!"
-DONE		= @echo "Compiled!"
 _CLEAR		= \033[0K\r\c
+_OK			= [\033[32mOK\033[0m]
+_CLEAN		= [\033[31mCLEAN\033[0m]
 
 $(OBJS_DIR)%.o	: $(SRCS_DIR)%.cpp
 			@mkdir -p $(OBJS_DIR)
@@ -28,14 +28,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(INCS)
 		@$(CC) $(FLAGS) -o $@ $(OBJS) $(MAIN_INC)
-		$(DONE)
+		@echo "$(_OK) $(NAME) compiled"
 
 clean:
 	@$(RM) $(OBJS_DIR)
 
 fclean: clean
 	@$(RM) $(NAME)
-	$(CLEAN)
+	@echo "$(_CLEAN) $(NAME) Executable removed!"
 
 re: fclean all
 
