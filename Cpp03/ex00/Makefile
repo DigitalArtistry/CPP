@@ -1,6 +1,6 @@
 NAME		= ex00
 
-CC			= clang++
+CC			= c++
 
 FLAGS		= -Wall -Wextra -Werror -std=c++98
 SRC			= \
