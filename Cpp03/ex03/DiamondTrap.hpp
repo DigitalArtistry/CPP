@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/02 19:09:35 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/04/02 16:59:48 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/04/02 19:59:31 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-# include <iostream>
-# include <string>
-
-class Fixed {
+class DiamondTrap : virtual public FragTrap, virtual public ScavTrap {
 
 private:
-	int					_nb;
-	static int const	_fract = 8;
+	std::string	_name;
+	DiamondTrap(void);
 
 public:
-	Fixed(void);  // default constructor
-	Fixed(Fixed const & src);  // copy constructor
-	~Fixed(void);  // destructor
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap& src);
+	~DiamondTrap();
 
-	Fixed &operator=(Fixed const & oload);  // assignment operator
+	DiamondTrap	&operator=(const DiamondTrap& src);
 
-	void	setRawBits(int const raw);
-	int		getRawBits(void) const;
+	void whoAmI(void) const;
+	using	ScavTrap::attack;
 };
 
 #endif

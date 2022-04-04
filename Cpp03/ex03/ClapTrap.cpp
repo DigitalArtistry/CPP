@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:29:37 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/02 19:34:26 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:02:09 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoint
 		std::cout << GRAY << "Init ClapTrap constructor called" << END << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &src) {
+ClapTrap::ClapTrap(const ClapTrap& src) {
 
 	if (LOG)
 		std::cout << GRAY << "Copy constructor called" << END << std::endl;
@@ -37,7 +37,7 @@ ClapTrap::~ClapTrap(void) {
 		std::cout << GRAY << "ClapTrap Destructor called"  << std::endl;
 }
 
-ClapTrap	&ClapTrap::operator=(const ClapTrap &rhs) {
+ClapTrap	&ClapTrap::operator=(const ClapTrap& rhs) {
 
 	if (LOG)
 		std::cout << "Copy assignment operator called" << std::endl;
@@ -95,8 +95,8 @@ std::string	ClapTrap::_printName(void) const {
 	return ("[" + _name + "] ");
 }
 
-void	ClapTrap::_getStats(void) const
-{
+void	ClapTrap::_getStats(void) const {
+
 	std::cout << GRAY2 << std::setw(8) << _hitPoints << "HP";
 	std::cout << std::setw(8) << _energyPoints << "EP";
 	std::cout << std::setw(8) << _damage << "AD" << END << std::endl;

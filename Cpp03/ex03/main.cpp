@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/02 19:09:35 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/29 18:21:37 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/04/02 17:20:28 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "DiamondTrap.hpp"
 
-# include <iostream>
-# include <string>
+int		main(int ac, char **av) {
 
-class Fixed {
+	(void)ac;
 
-private:
-	int					_nb;
-	static int const	_fract = 8;
+	DiamondTrap	diamondTrap("Inheritor");
 
-public:
-	Fixed(void);  // default constructor
-	Fixed(Fixed const & src);  // copy constructor
-	~Fixed(void);  // destructor
+	diamondTrap.whoAmI();
+	diamondTrap.guardGate();
+	diamondTrap.highFivesGuys();
+	diamondTrap.attack("random human");
+	diamondTrap.takeDamage(20);
+	diamondTrap.beRepaired(10);
+	diamondTrap.takeDamage(100);
 
-	Fixed &operator=(Fixed const & oload);  // assignment operator
-
-	void	setRawBits(int const raw);
-	int		getRawBits(void) const;
-};
-
-#endif
+	return 0;
+}

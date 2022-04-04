@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/02 19:09:35 by lucisanc         ###   ########.fr       */
+/*   Created: 2022/03/31 19:19:33 by lucisanc          #+#    #+#             */
+/*   Updated: 2022/04/01 19:08:12 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+# include "ClapTrap.hpp"
 
-# include <iostream>
-# include <string>
-
-class Fixed {
+class FragTrap : virtual public ClapTrap {
 
 private:
-	int					_nb;
-	static int const	_fract = 8;
 
 public:
-	Fixed(void);  // default constructor
-	Fixed(Fixed const & src);  // copy constructor
-	~Fixed(void);  // destructor
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(const FragTrap& rhs);
+	~FragTrap();
 
-	Fixed &operator=(Fixed const & oload);  // assignment operator
+	FragTrap	&operator=(const FragTrap& rhs);
 
-	void	setRawBits(int const raw);
-	int		getRawBits(void) const;
+	void	attack(const std::string& target);
+	void	highFivesGuys(void) const;
 };
 
 #endif

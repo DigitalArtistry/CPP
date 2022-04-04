@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:07:53 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/29 14:26:48 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/02 19:11:29 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		main(void) {
 
 	Fixed a;
 	Fixed const b( 10 );
-	std::cout << b.getRawBits() << std::endl;
 	Fixed const c( 42.42f );
 	Fixed const d( b );
 

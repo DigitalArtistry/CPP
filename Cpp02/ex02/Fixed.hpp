@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:08:30 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/29 16:25:35 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:17:53 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ public:
 	Fixed &operator=(Fixed const & oload); // copy assignment operator overload
 
 	// 6 comparison operators
-	bool operator==(Fixed const & fixed) const { return (this->_fxpt == fixed._fxpt); }
-	bool operator!=(Fixed const & fixed) const { return (this->_fxpt != fixed._fxpt); }
-	bool operator< (Fixed const & fixed) const { return (this->_fxpt < fixed._fxpt); }
-	bool operator> (Fixed const & fixed) const { return (this->_fxpt > fixed._fxpt); }
-	bool operator<=(Fixed const & fixed) const { return (this->_fxpt <= fixed._fxpt); }
-	bool operator>=(Fixed const & fixed) const { return (this->_fxpt >= fixed._fxpt); }
+	bool operator==(Fixed const & fixed) const;
+	bool operator!=(Fixed const & fixed) const;
+	bool operator< (Fixed const & fixed) const;
+	bool operator> (Fixed const & fixed) const;
+	bool operator<=(Fixed const & fixed) const;
+	bool operator>=(Fixed const & fixed) const;
 
 	// 4 arithmetic operators
-	Fixed operator+(Fixed const & fixed){ return (Fixed(this->toFloat() + fixed.toFloat())); }
-	Fixed operator-(Fixed const & fixed){ return (Fixed(this->toFloat() - fixed.toFloat())); }
-	Fixed operator*(Fixed const & fixed){ return (Fixed(this->toFloat() * fixed.toFloat())); }
-	Fixed operator/(Fixed const & fixed){ return (Fixed(this->toFloat() / fixed.toFloat())); }
+	Fixed operator+(Fixed const & fixed);
+	Fixed operator-(Fixed const & fixed);
+	Fixed operator*(Fixed const & fixed);
+	Fixed operator/(Fixed const & fixed);
 
 	// 4 increment/decrement operators
 	Fixed &operator++();

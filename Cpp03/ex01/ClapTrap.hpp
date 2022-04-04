@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 17:21:29 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/02 19:34:51 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/02 19:41:57 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@
 
 class ClapTrap {
 
-private:
-	ClapTrap(void);
-
+protected:
 	std::string		_name;
 	int				_hitPoints;
 	int				_energyPoints;
@@ -48,6 +46,7 @@ private:
 	std::string	_printName(void) const;
 
 public:
+	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &src);
 	~ClapTrap();

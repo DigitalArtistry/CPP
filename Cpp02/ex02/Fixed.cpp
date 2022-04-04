@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:08:55 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/29 16:26:54 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:03:30 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,49 @@ const Fixed	&Fixed::max(Fixed const & n1, Fixed const & n2) {
 	return (n2);
 }
 
-// 4 INCREMENT/DECREMENT OPERATORS
+// 6 COMPARISON OPEARTORS
+bool Fixed::operator==(Fixed const & fixed) const {
+	return (this->_fxpt == fixed._fxpt);
+}
 
+bool Fixed::operator!=(Fixed const & fixed) const {
+	return (this->_fxpt != fixed._fxpt);
+}
+
+bool Fixed::operator< (Fixed const & fixed) const {
+	return (this->_fxpt < fixed._fxpt);
+}
+
+bool Fixed::operator> (Fixed const & fixed) const {
+	return (this->_fxpt > fixed._fxpt);
+}
+
+bool Fixed::operator<=(Fixed const & fixed) const {
+	return (this->_fxpt <= fixed._fxpt);
+}
+
+bool Fixed::operator>=(Fixed const & fixed) const {
+	return (this->_fxpt >= fixed._fxpt);
+}
+
+// 4 ARITHMETIC OPERATORS
+Fixed Fixed::operator+(Fixed const & fixed) {
+	return (Fixed(this->toFloat() + fixed.toFloat()));
+}
+
+Fixed Fixed::operator-(Fixed const & fixed) {
+	return (Fixed(this->toFloat() - fixed.toFloat()));
+}
+
+Fixed Fixed::operator*(Fixed const & fixed) {
+	return (Fixed(this->toFloat() * fixed.toFloat()));
+}
+
+Fixed Fixed::operator/(Fixed const & fixed) {
+	return (Fixed(this->toFloat() / fixed.toFloat()));
+}
+
+// 4 INCREMENT/DECREMENT OPERATORS
 Fixed 	&Fixed::operator++() {
 	++(this->_fxpt);
 	return (*this);

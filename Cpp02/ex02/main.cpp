@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 19:07:53 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/03/29 16:12:27 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/02 19:13:39 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ int		main(void) {
 
 	Fixed			a;
 	Fixed const		b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	Fixed const		c( Fixed(10) / Fixed(2));
+
+	std::cout << "division " << c << std::endl;
 	
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
