@@ -6,11 +6,12 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:34:48 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/05 13:48:09 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/06 13:35:02 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "utils.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("X"), _grade(42) {
 
@@ -85,8 +86,21 @@ void			Bureaucrat::gradeDecrement(void) {
 	_grade++;
 }
 
+void			Bureaucrat::signForm(Form & form) {
+
+	form.beSigned(*this);
+	if (form.getSignedStatus())
+		std::cout << ft_embed(this->getName(), GREEN) << "signed" << ft_embed(form.getName(), GREEN) << std::endl;
+}
+
+void			Bureaucrat::executeForm(Form const & form) {
+
+	form.execute(*this);
+	std::cout << ft_embed(this->getName(), GREEN) << "executed" << ft_embed(form.getName(), GREEN) << std::endl;
+}
+
 std::ostream	&operator<<(std::ostream &o, const Bureaucrat &src) {
 
-	o << GREEN << "[" << src.getName() << "]" << END << " has a grade of " << src.getGrade();
+	o << ft_embed(src.getName(), GREEN) << "has a grade of " << src.getGrade();
 	return o;
 }

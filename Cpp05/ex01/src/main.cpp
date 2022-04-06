@@ -6,51 +6,49 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:22:18 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/05 13:26:30 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:22:47 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
-void	testExcepLow(void) {
+void	testBoss(void) {
 
-	Bureaucrat	i("Boss", 151);
+	Bureaucrat	i("Boss", 1);
+	Form		n("Contract", 98, 1);
+
+	std::cout << n << std::endl;
+	i.signForm(n);
+	std::cout << n << std::endl;
 }
 
-void	testExcepHigh(void) {
+void	testInvalidForm(void) {
 
-	Bureaucrat	i("Boss", 0);
+	Bureaucrat	i("Intern", 99);
+	Form		n("Contract", 200, 1);
+
+	i.signForm(n);
 }
 
-void	testIncrement(void) {
+void	testIntern(void) {
 
-	Bureaucrat i("Boss", 3);
+	Bureaucrat	i("Intern", 99);
+	Form		n("Contract", 98, 1);
 
-	std::cout << "Grade Increment Test" << std::endl;
-	std::cout << i << std::endl;
+	i.signForm(n);
+
+	std::cout << "Intern grade incremented" << std::endl;
 	i.gradeIncrement();
-	i.gradeIncrement();
 	std::cout << i << std::endl;
-	i.gradeIncrement(); // bust
-}
-
-void	testDecrement(void) {
-
-	Bureaucrat i("Boss", 148);
-
-	std::cout << "Grade Decrement Test" << std::endl;
-	std::cout << i << std::endl;
-	i.gradeDecrement();
-	i.gradeDecrement();
-	std::cout << i << std::endl;
-	i.gradeDecrement(); // bust	
+	i.signForm(n);
 }
 
 int		main() {
 
 	{
 		try {
-			testExcepLow();
+			testBoss();
 		}
 		catch (std::exception & e) {
 			std::cerr << e.what() << std::endl;
@@ -58,27 +56,14 @@ int		main() {
 	}
 	{
 		try {
-			testExcepHigh();
+			testInvalidForm();
 		}
 		catch (std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
 	}
 	{
-		try {
-			testIncrement();
-		}
-		catch (std::exception & e) {
-			std::cerr << e.what() << std::endl;
-		}
-	}
-	{
-		try {
-			testDecrement();
-		}
-		catch (std::exception & e) {
-			std::cerr << e.what() << std::endl;
-		}
+		testIntern();
 	}
 	return 0;
 }

@@ -6,21 +6,19 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:52:19 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/05 12:24:45 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/05 15:11:20 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
-# define LOG 1
-# define RED		"\x1B[31m"
-# define GREEN		"\x1B[32m"
-# define END		"\033[0m"
 
-# include <iostream>
-# include <string>
+# include "Form.hpp"
+# include "utils.hpp"
 
-class Bureaucrat	{
+class Form;
+
+class Bureaucrat {
 
 private:
 
@@ -39,6 +37,7 @@ public:
 	long			getGrade(void) const;
 	void			gradeIncrement(void);
 	void			gradeDecrement(void);
+	void			signForm(Form &src);
 
 	// Nested classes
 	class GradeTooHighException : public std::exception {
