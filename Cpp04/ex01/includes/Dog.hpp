@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 12:00:28 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/03 18:04:35 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:41:00 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Dog(void);
 	Dog(const Dog & src);
-	~Dog();
+	virtual ~Dog();
 
 	Dog		&operator=(const Dog & src);
 

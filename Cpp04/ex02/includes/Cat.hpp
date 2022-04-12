@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:55:36 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/03 17:29:25 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:43:04 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Cat(void);
 	Cat(const Cat & src);
-	~Cat();
+	virtual ~Cat();
 
 	Cat		&operator=(const Cat & src);
 

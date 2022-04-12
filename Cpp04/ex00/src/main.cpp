@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:22:18 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/03 14:21:28 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:34:52 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,35 @@
 int		main() {
 
 	{
-		const Animal* meta = new Animal();
-		const Animal* j = new Dog();
-		const Animal* i = new Cat();
+		const Animal* animal = new Animal();
+		const Animal* dog = new Dog();
+		const Animal* cat = new Cat();
 
-		std::cout << j->getType() << " " << std::endl;
-		std::cout << i->getType() << " " << std::endl;
-		j->makeSound();
-		i->makeSound();
-		meta->makeSound();
+		std::cout << dog->getType() << std::endl;
+		std::cout << cat->getType() << std::endl;
+		dog->makeSound();
+		cat->makeSound();
+		animal->makeSound();
 
-		delete meta;
-		delete j;
-		delete i;
+		delete animal;
+		delete dog;
+		delete cat;
 	}
 	std::cout << "\nCheck wrong animals\n" << std::endl;
 	{
-		const WrongAnimal* meta = new WrongAnimal();
-		const WrongAnimal* i = new WrongCat();
+		const WrongAnimal* wAnimal = new WrongAnimal();
+		const WrongAnimal* wCat = new WrongCat();
 
-		std::cout << i->getType() << " " << std::endl;
-		i->makeSound();
-		meta->makeSound();
+		std::cout << wCat->getType() << std::endl;
+		wCat->makeSound();
+		wAnimal->makeSound();
 
-		delete meta;
-		delete i;
+		const WrongCat*	wrongCat = new WrongCat();
+		wrongCat->makeSound();
+
+		delete wAnimal;
+		delete wCat;
+		delete wrongCat;
 	}
 	return 0;
 }

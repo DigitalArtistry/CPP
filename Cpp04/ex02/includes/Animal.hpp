@@ -6,13 +6,13 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:52:19 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/03 18:19:37 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/09 00:44:50 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
-# define LOG 0
+# define LOG 1
 
 # include <iostream>
 # include <string>
