@@ -1,18 +1,12 @@
 #include "Convert.hpp"
 
-Convert::Convert(void) : _rawStr("X") {
+Convert::Convert(void) {
 
 	if (LOG)
 		std::cout << "Default Constructor" << std::endl;
 }
 
-Convert::Convert(std::string &str) : _rawStr(str){
-
-	if (LOG)
-		std::cout << "Convert constructor called" << std::endl;
-}
-
-Convert::Convert(Convert const &src) : _rawStr(src._rawStr) {
+Convert::Convert(Convert const &src) {
 
 	if (LOG)
 		std::cout << "Copy constructor called" << std::endl;
@@ -22,7 +16,7 @@ Convert::Convert(Convert const &src) : _rawStr(src._rawStr) {
 Convert		&Convert::operator=(Convert const &src) {
 
 	if (this != &src)
-		this->_rawStr = src._rawStr;
+		return (*this);
 	return (*this);
 }
 
@@ -32,13 +26,8 @@ Convert::~Convert() {
 		std::cout << "Convert destructor called" << std::endl;
 }
 
-std::string		Convert::getRawStr(void) const {
-
-	return (this->_rawStr);
-}
 
 std::ostream		&operator<<(std::ostream &o, Convert const &src) {
 
-	o << src.getRawStr();
 	return o;
 }

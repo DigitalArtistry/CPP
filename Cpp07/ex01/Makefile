@@ -1,4 +1,4 @@
-NAME		= tmpl
+NAME		= iter
 
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
