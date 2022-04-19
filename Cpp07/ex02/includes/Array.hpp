@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:59:59 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/18 13:17:17 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/18 14:34:29 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ template<typename T>
 class	Array {
 
 public:
-	Array(void) : _arrP(NULL), _size(5) {return;};
-	Array( unsigned int size) : _arrP(new T[size], _size(size) {
+	Array(void) : _arrP(0), _size(5) {return;};
+	Array(unsigned int size) : _arrP(new T[size]), _size(size) {
 		for (unsigned int i = 0; i < size; i++) {
 			_arrP[i] = static_cast<T>(0);
 		}
@@ -29,7 +29,7 @@ public:
 	};
 	~Array() {delete [] _arrP;};
 	
-	void	copyArray( Array const &src, unsigned int size) {
+	void	copyArray( Array const &src, unsigned int size ) {
 		for (unsigned int i = 0; i < size; i++) {
 			this->_arrP[i] = src._arrP[i];
 		}
@@ -44,7 +44,7 @@ private:
 };
 
 std::ostream &	operator<<(std::ostream &o, Array<unsigned int> &x) {
-	o << x.getNb();
+	o << x.getSize();
 	return o;
 }
 
