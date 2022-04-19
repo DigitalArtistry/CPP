@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:52:19 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/05 12:24:45 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:54:39 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Bureaucrat	{
 
 private:
 
-	std::string	_name;
-	long		_grade;
+	std::string const	_name;
+	long				_grade;
 
 public:
 	Bureaucrat(void);

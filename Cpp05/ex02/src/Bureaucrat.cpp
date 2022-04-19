@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:34:48 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/06 13:35:02 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/19 17:12:48 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat & src) {
 
 	if (this != &src) {
-		this->_name = src._name;
 		this->_grade = src._grade;
 	}
 	return *this;

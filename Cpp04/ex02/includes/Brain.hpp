@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 11:55:36 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/03 18:00:18 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/18 21:14:54 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ public:
 	Brain(const Brain & src);
 	~Brain();
 
-	Brain		&operator=(const Brain & src);
+	Brain			&operator=(const Brain & src);
 
-	void		showIdeas(int &nb) const;
+	virtual void	showIdeas(int &nb) const;
 };
 
 #endif
