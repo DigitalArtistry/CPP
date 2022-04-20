@@ -6,7 +6,7 @@
 /*   By: lucisanc <lucisanc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:59:59 by lucisanc          #+#    #+#             */
-/*   Updated: 2022/04/17 23:54:31 by lucisanc         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:54:56 by lucisanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	p_elem(X elem) {
 	std::cout << elem << " ";
 }
 
-template<typename A, typename S, typename F>
-void	iter(A *arr, S size, F (*fn)(A)) {
+template<typename T>
+void	iter(const T *arr, int size, void fn(const T &) ) {
 
-	for (S i = 0; i < size; i++) {
+	for (int i = 0; i < size; i++) {
 		fn(arr[i]);
 	}
 }
