@@ -1,4 +1,4 @@
-# CPP ![lucisanc's 42 CPP Module 08 Score](https://badge42.vercel.app/api/v2/cl3vpat6c006909l0j733osv1/project/2567954)]
+# CPP ![lucisanc's 42 CPP Module 08 Score](https://badge42.vercel.app/api/v2/cl3vpat6c006909l0j733osv1/project/2567954)
 
 ## Goal
 
