@@ -25,10 +25,10 @@ std::string	ft_strtrim(std::string str)
 	return (str);
 }
 
-std::string	ft_toupper_string(std::string str)
+std::string	ft_tolower_string(std::string str)
 {
 	for (int i = 0 ; str[i] ; ++i)
-		str[i] = toupper(str[i]);
+		str[i] = tolower(str[i]);
 	return (str);
 }
 
@@ -41,7 +41,7 @@ int		main(int ac, char **av)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	else for (int i = 1 ; i < ac ; ++i)
 	{
-		result = ft_toupper_string(av[i]);
+		result = ft_tolower_string(av[i]);
 		result = ft_strtrim(result);
 		if (result == "")
 			continue;
